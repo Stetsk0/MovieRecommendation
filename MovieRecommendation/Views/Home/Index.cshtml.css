@@ -1,0 +1,27 @@
+﻿
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+    .search-container input {
+        flex: 1;
+        padding: 15px;
+        font-size: 18px;
+        border: groove;
+        outline: none;
+    }
+
+    .search-container button {
+
+        border: groove;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .search-container input:focus + button i {
+        color: #007BFF;
+    }

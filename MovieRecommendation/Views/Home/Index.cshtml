@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<MovieRecommendation.Models.MovieResult>
+
+<h3 class="text-center">
+    Welcome to MovieRecommendation! 🎬    
+</h3>
+<hr />
+<p>
+    Looking for a movie that will give you the same emotions as your favorite? This service will help you find similar movies based on your favorite movie. 
+    <br />Just enter the name of the movie - and we will select the best recommendations for you!
+</p>
+<p>
+    Start searching and discover new cinematic masterpieces! 🍿✨
+</p>
+<div class="search-container d-flex justify-content-center align-items-center mt-auto" style="width: 500px; height: 30vh;">
+    <form class="d-flex w-100" method="post" asp-action="Search" role="search">
+        <input class="form-control flex-grow-1 me-2" type="search" id="movieTitle" name="movieTitle"
+               placeholder="Enter a movie title" required />
+        <button class="btn" type="submit">
+            <i class="fa-solid fa-search"></i>
+        </button>
+    </form>
+</div>
+<hr />
+<div class="d-flex flex-column"style="height:100px;">
+    <p class=" mt-auto" >
+    “Cinema is a language. It can say things—big, abstract things. And I love that about it. I’m not always good with words. Some people are poets and have a beautiful way of saying things with words. But cinema is its own language. And with it you can say so many things, because you’ve got time and sequences. You’ve got dialogue. You’ve got music. You’ve got sound effects. You have so many tools. And you can express a feeling and a thought that can’t be conveyed any other way. Its a magical medium. For me, it’s so beautiful to think about these pictures and sounds flowing together in time and in sequence, making something that can be done only through cinema. Its not just words or music-it’s a whole range of elements coming together and making something that didn’t exist before. It’s telling stories. It’s devising a world, an experience, that people cannot have unless they see that film. When I catch an idea for a film, I fall in love with the way cinema can express it. I like a story that holds abstractions, and that’s what cinema can do.”
+</p>
+    <p class="text-end fw-bold" style="font-family:Lato, Helvetica Neue , Helvetica , sans-serif;">― David Lynch</p>
+</div>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info alert-warning fade show position-fixed top-0 start-50 translate-middle-x" role="alert" style="z-index: 1050;">
+        @ViewBag.Message
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
